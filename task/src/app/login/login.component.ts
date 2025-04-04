@@ -21,28 +21,30 @@ export class LoginComponent {
     const loginData = {
       email: this.email,
       password: this.password,
-      device_type: 'W',
-      device_token: '',
-      device_model: '',
-      app_version: '',
-      os_version: ''
+      phone_code: "+91",
+      device_type: "W",
+      device_token: "",
+      device_model: "",
+      app_version: "",
+      os_version: ""
     };
   
     this.http.post(
-      'https://dev.myemprove.com/api/ver3api/student-login?lang=en&store=KW',
+      "https://dev.myemprove.com/api/ver3api/student-login?lang=en&store=KW",
       loginData,
-      { headers: { 'Content-Type': 'application/json' } }
+      { headers: { "Content-Type": "application/json" } }
     ).subscribe({
       next: (response) => {
-        console.log('Login successful:', response);
-        localStorage.setItem('userData', JSON.stringify(response));
-        this.router.navigate(['/dashboard']);
+        console.log("Login successful:", response);
+        localStorage.setItem("userData", JSON.stringify(response));
+        this.router.navigate(["/dashboard"]);
       },
       error: (error) => {
-        console.error('Login failed:', error);
-        alert('Login failed! Please check your credentials.');
+        console.error("Login failed:", error);
+        alert("Login failed! Please check your credentials.");
       }
     });
   }
+  
   
 }
