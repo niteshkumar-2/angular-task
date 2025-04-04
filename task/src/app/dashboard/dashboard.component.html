@@ -1,11 +1,87 @@
-<div class="container">
-    <h2 class="text-center mt-4">My Account</h2>
-    <div class="card p-4 shadow-lg">
-      <h4>Personal Information</h4>
-      <p><strong>Name:</strong> {{ user?.name }}</p>
-      <p><strong>Email:</strong> {{ user?.email }}</p>
-      <p><strong>Phone:</strong> {{ user?.phone }}</p>
-      <button class="btn btn-danger" (click)="logout()">Logout</button>
+<div class="dashboard-container">
+  <!-- Top Profile Section -->
+  <div class="profile-header">
+    <div class="profile-info">
+      <img src="assets/profile-placeholder.png" alt="User" class="profile-img" />
+      <div>
+        <h4>test</h4>
+        <p>+965 98563214</p>
+        <p>test.com</p>
+      </div>
     </div>
   </div>
-  
+
+  <!-- Sidebar & Main Content -->
+  <div class="dashboard-content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul>
+        <li><i class="fas fa-user"></i> Edit Profile</li>
+        <li><i class="fas fa-question-circle"></i> FAQs</li>
+        <li><i class="fas fa-envelope"></i> Contact Us</li>
+        <li><i class="fas fa-trash"></i> Delete Account</li>
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+        <!-- <li class="logout"><i class="fas fa-sign-out-alt"></i> Logout</li> -->
+      </ul>
+    </div>
+
+    <!-- Main Section -->
+    <div class="profile-section">
+      <h3>PERSONAL INFORMATION</h3>
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="assets/profile-placeholder.png" alt="User" class="profile-img" />
+          <div>
+            <h4>Test Test</h4>
+            <p>testopmail</p>
+          </div>
+        </div>
+
+        <form>
+          <div class="input-group">
+            <label>First Name</label>
+            <input type="text" value="test" />
+          </div>
+          <div class="input-group">
+            <label>Last Name</label>
+            <input type="text" value="test" />
+          </div>
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" value="test@yopmail.com" disabled />
+          </div>
+          <div class="input-group phone-input">
+            <label>Phone Number</label>
+            <div class="phone-wrapper">
+              <select>
+                <option selected>965</option>
+              </select>
+              <input type="text" value="98563214" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Old Password</label>
+            <input type="password" placeholder="Enter your current password" />
+          </div>
+          <div class="input-group">
+            <label>New Password</label>
+            <input type="password" placeholder="Enter your new password" />
+          </div>
+          <div class="input-group">
+            <label>Confirm New Password</label>
+            <input type="password" placeholder="Confirm your new password" />
+          </div>
+          <button type="submit" class="save-btn">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="quick-links">
+      <a href="#">Press</a> | <a href="#">FAQs</a> | <a href="#">Contact us</a> | <a href="#">About us</a>
+    </div>
+    <p>Copyright © 2024 K-Land. All Rights Reserved.</p>
+  </footer>
+</div>
