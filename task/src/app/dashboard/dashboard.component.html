@@ -10,55 +10,69 @@
 
     <div class="account-title">
       <h1><span class="italic-text">MY</span> ACCOUNT</h1>
-      <p>Manage Your Fun: View Tickets, Book Zones, and <br> Your Adventure!</p>
+      <p>
+        Manage Your Fun: View Tickets, Book Zones, and <br />
+        Your Adventure!
+      </p>
     </div>
   </div>
-  <div class="dashboard-container">
-    <div class="profile-header">
-      <img [src]="user?.image || 'assets/img/profile-icon.jpg'" alt="User" class="profile-img"
-        onerror="this.src='assets/img/default-icon.jpg'" />
-      <div class="profile-info">
-        <h4>{{ user?.first_name }} {{ user?.last_name }}</h4>
-        <p>+{{ user?.phone_code }} {{ user?.phone }}</p>
-        <p>{{ user?.email }}</p>
-      </div>
+
+  <div class="profile-header">
+    <img
+      [src]="user?.image || 'assets/img/profile-icon.jpg'"
+      alt="User"
+      class="profile-img"
+      onerror="this.src='assets/img/default-icon.jpg'"
+    />
+    <div class="profile-info">
+      <h4>{{ user?.first_name }} {{ user?.last_name }}</h4>
+      <p>+{{ user?.phone_code }} {{ user?.phone }}</p>
+      <p>{{ user?.email }}</p>
     </div>
   </div>
 
   <div class="dashboard-content">
     <div class="sidebar">
       <ul class="sidebar-menu">
-        <li><i class="fas fa-user text-success"></i> <span class="text-success">Edit Profile</span></li>
-        <li><i class="fas fa-question-circle text-muted"></i> <span class="text-muted">FAQs</span></li>
-        <li><i class="fas fa-headset text-muted"></i> <span class="text-muted">Contact Us</span></li>
-        <li><i class="fas fa-user-slash text-muted"></i> <span class="text-muted">Delete Account</span></li>
+        <li>
+          <i class="fas fa-user text-success"></i>
+          <span class="text-success">Edit Profile</span>
+        </li>
+        <li>
+          <i class="fas fa-question-circle text-muted"></i>
+          <span class="text-muted">FAQs</span>
+        </li>
+        <li>
+          <i class="fas fa-headset text-muted"></i>
+          <span class="text-muted">Contact Us</span>
+        </li>
+        <li>
+          <i class="fas fa-user-slash text-muted"></i>
+          <span class="text-muted">Delete Account</span>
+        </li>
         <li class="logout-item" (click)="logout()">
-          <i class="fas fa-sign-out-alt text-danger"></i> <span class="text-danger">Logout</span>
+          <i class="fas fa-sign-out-alt text-danger"></i>
+          <span class="text-danger">Logout</span>
         </li>
       </ul>
-
     </div>
+
     <div class="profile-section">
       <h3>PERSONAL INFORMATION</h3>
       <div class="profile-card">
         <div class="profile-header">
-          <!-- <div class="profile-img-wrapper">
-            <img [src]="user?.image || 'assets/img/profile-icon.jpg'" alt="User" class="profile-img"
-              onerror="this.src='assets/img/default-icon.jpg'" />
+          <div class="profile-img-wrapper">
+            <img
+              [src]="user?.image || 'assets/img/profile-icon.jpg'"
+              alt="User"
+              class="profile-img"
+              onerror="this.src='assets/img/default-icon.jpg'"
+            />
             <label class="upload-icon">
               <input type="file" hidden />
               <span>&#128247;</span>
             </label>
-          </div> -->
-          <div class="profile-img-wrapper">
-            <img [src]="user?.image || 'assets/img/profile-icon.jpg'" alt="User" class="profile-img"
-              onerror="this.src='assets/img/default-icon.jpg'" />
-            <label class="upload-icon">
-              <input type="file" hidden />
-              <span>&#128247;</span> <!-- Unicode Camera Icon -->
-            </label>
           </div>
-
 
           <div class="user-info">
             <h4>{{ user?.first_name }} {{ user?.last_name }}</h4>
@@ -91,36 +105,39 @@
               <input type="text" [value]="user?.phone" />
             </div>
           </div>
-          <div class="input-group">
-            <label>Old Password</label>
+
+          <div
+            class="input-group"
+            *ngFor="
+              let field of [
+                'Old Password',
+                'New Password',
+                'Confirm New Password'
+              ];
+              let i = index
+            "
+          >
+            <label>{{ field }}</label>
             <div class="password-field">
-              <input [type]="showOldPassword ? 'text' : 'password'" placeholder="Enter your current password" />
-              <i class="fas" [ngClass]="showOldPassword ? 'fa-eye-slash' : 'fa-eye'"
-                (click)="showOldPassword = !showOldPassword"></i>
+              <input
+                [type]="showOldPassword ? 'text' : 'password'"
+                [placeholder]="'Enter ' + field.toLowerCase()"
+              />
+              <i
+                class="fas"
+                [ngClass]="showOldPassword ? 'fa-eye-slash' : 'fa-eye'"
+                (click)="showOldPassword = !showOldPassword"
+              ></i>
             </div>
           </div>
-          <div class="input-group">
-            <label>New Password</label>
-            <div class="password-field">
-              <input [type]="showOldPassword ? 'text' : 'password'" placeholder="Enter your new password" />
-              <i class="fas" [ngClass]="showOldPassword ? 'fa-eye-slash' : 'fa-eye'"
-                (click)="showOldPassword = !showOldPassword"></i>
-            </div>
-          </div>
-          <div class="input-group">
-            <label>Confirm New Password</label>
-            <div class="password-field">
-              <input [type]="showOldPassword ? 'text' : 'password'" placeholder="Confirm your new password" />
-              <i class="fas" [ngClass]="showOldPassword ? 'fa-eye-slash' : 'fa-eye'"
-                (click)="showOldPassword = !showOldPassword"></i>
-            </div>
-          </div>
+
           <button type="submit" class="save-btn">Save</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
 <footer class="footer-container">
   <div class="container py-4 text-white">
     <div class="text-center mb-3">
@@ -147,7 +164,11 @@
       </div>
       <div class="col-md-4 text-md-end text-center">
         <small>PRESENTED BY</small><br />
-        <img src="assets/img/logo.png" alt="K Land Logo" style="max-width: 80px;" />
+        <img
+          src="assets/img/logo.png"
+          alt="K Land Logo"
+          style="max-width: 80px"
+        />
       </div>
     </div>
   </div>

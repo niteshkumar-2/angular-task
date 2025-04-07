@@ -33,8 +33,8 @@ export class LoginComponent {
       },
       error: (err) => {
         this.loading = false;
-        alert("Login failed!");
-      }
+        alert('Login failed!');
+      },
     });
   }
 }

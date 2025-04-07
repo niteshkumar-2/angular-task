@@ -3,8 +3,12 @@
   padding: 2rem 1rem 5rem;
   position: relative;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 8%, transparent 8.01%);
+  font-family: "Poppins", sans-serif;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 8%,
+    transparent 8.01%
+  );
   background-size: 30px 30px;
   background-position: top right;
 }
@@ -34,7 +38,6 @@
   cursor: pointer;
 }
 
-/* Title Section */
 .account-title {
   text-align: center;
 }
@@ -58,14 +61,12 @@
   margin: 0 auto;
 }
 
-/* Profile Header */
 .profile-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   padding: 1.5rem 2rem;
   color: #000;
   margin: -50px auto 0;
@@ -76,11 +77,12 @@
 
 .profile-img-wrapper {
   position: relative;
+  display: inline-block;
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #007b7f;
@@ -90,10 +92,17 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  background: #fff;
+  background-color: #fff;
   border-radius: 50%;
-  padding: 2px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  font-size: 16px;
+  padding: 2px;
   border: 1px solid #ccc;
 }
 
@@ -112,7 +121,6 @@
   font-size: 0.95rem;
 }
 
-/* Layout */
 .dashboard-content {
   display: flex;
   flex-direction: row;
@@ -165,7 +173,6 @@
   margin-top: 10px;
 }
 
-/* Profile Section */
 .profile-section {
   flex: 1;
   max-width: 900px;
@@ -185,13 +192,11 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.05);
 }
 
-
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem 2rem;
 }
-
 
 .input-group {
   display: flex;
@@ -246,7 +251,7 @@ form {
   color: #999;
 }
 
-
+/* Save Button */
 .save-btn {
   grid-column: span 2;
   width: 100%;

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = environment.apiBaseUrl;
@@ -14,24 +14,28 @@ export class AuthService {
     const loginData = {
       email,
       password,
-      phone_code: "+91",
-      device_type: "W",
-      device_token: "",
-      device_model: "",
-      app_version: "",
-      os_version: ""
+      phone_code: '+91',
+      device_type: 'W',
+      device_token: '',
+      device_model: '',
+      app_version: '',
+      os_version: '',
     };
 
-    return this.http.post(`${this.apiUrl}/student-login?lang=en&store=KW`, loginData, {
-      headers: { "Content-Type": "application/json" }
-    });
+    return this.http.post(
+      `${this.apiUrl}/student-login?lang=en&store=KW`,
+      loginData,
+      {
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
   }
 
   logout() {
-    localStorage.removeItem("userData");
+    localStorage.removeItem('userData');
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem("userData");
+    return !!localStorage.getItem('userData');
   }
 }

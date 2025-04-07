@@ -12,8 +12,6 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit {
   user: any;
   showOldPassword = true;
-
-
   constructor(private router: Router) {}
 
   ngOnInit() {
