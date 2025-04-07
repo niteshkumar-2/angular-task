@@ -20,8 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Environment files
-src/environments/environment*.ts
+
 
 # Compiled output
 *.js
